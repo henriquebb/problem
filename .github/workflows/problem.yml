@@ -1,0 +1,26 @@
+name: first
+on: push
+jobs:
+    packages:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Install Dependencies
+              run: npm install
+    lint:
+        needs: packages
+        runs-on: ubuntu-latest
+        steps:
+            - name : Run Lint
+              run: npm lint
+    test:
+        needs: lint
+        runs-on: ubuntu-latest
+        name: Run Tests
+        steps:
+            - run: npm test
+    deploy:
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy Application
+              run: echo "Deploying application"
