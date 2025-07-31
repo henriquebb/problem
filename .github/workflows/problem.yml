@@ -5,7 +5,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Install Dependencies
-              run: npm install
+              run: cd ../../ && npm install
     lint:
         needs: packages
         runs-on: ubuntu-latest
