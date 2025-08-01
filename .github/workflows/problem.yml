@@ -18,6 +18,11 @@ jobs:
         steps:
             - name: Checkout Code
               uses: actions/checkout@v2
+            - name: Install Dependencies
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+                cache: 'npm'
             - name : Run Lint
               run: npm run lint
     test:
@@ -27,6 +32,11 @@ jobs:
         steps:
             - name: Checkout Code
               uses: actions/checkout@v2
+            - name: Install Dependencies
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+                cache: 'npm'
             - run: npm test
     deploy:
         needs: test
