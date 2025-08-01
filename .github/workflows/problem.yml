@@ -23,6 +23,7 @@ jobs:
               with:
                 node-version: '20'
                 cache: 'npm'
+            - run: npm install
             - name : Run Lint
               run: npm run lint
     test:
