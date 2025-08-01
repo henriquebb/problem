@@ -40,6 +40,12 @@ jobs:
                 cache: 'npm'
             - run: npm install
             - run: npm test
+    build:
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Build Application
+              run: npm run build
     deploy:
         needs: test
         runs-on: ubuntu-latest
