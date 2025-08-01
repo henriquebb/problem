@@ -7,6 +7,7 @@ jobs:
             - name: Checkout Code
               uses: actions/checkout@v2
     packages:
+        needs: code
         runs-on: ubuntu-latest
         steps:
             - name: Install Dependencies
