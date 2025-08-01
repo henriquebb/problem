@@ -12,13 +12,17 @@ jobs:
         needs: code
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout Code
+              uses: actions/checkout@v2
             - name : Run Lint
-              run: npm lint
+              run: npm run lint
     test:
         needs: lint
         runs-on: ubuntu-latest
         name: Run Tests
         steps:
+            - name: Checkout Code
+              uses: actions/checkout@v2
             - run: npm test
     deploy:
         needs: test
