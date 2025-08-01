@@ -1,11 +1,16 @@
 name: first
 on: push
 jobs:
+    code:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v2
     packages:
         runs-on: ubuntu-latest
         steps:
             - name: Install Dependencies
-              run: cd /home/runner/work/problem/problem && npm install
+              run: npm install
     lint:
         needs: packages
         runs-on: ubuntu-latest
