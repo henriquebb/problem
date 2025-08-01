@@ -5,7 +5,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Install Dependencies
-              run: cd /home/runner/work/problem/problem/package.json && npm install
+              run: cd /home/runner/work/problem/problem && npm install
     lint:
         needs: packages
         runs-on: ubuntu-latest
